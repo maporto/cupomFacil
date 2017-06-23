@@ -1,0 +1,24 @@
+<div id="telaLogin" layout="row" layout-align="center center">
+  <form name="login.formLogin" layout="column" flex-sm flex-md="60" flex-gt-sm="20" ng-submit="login.logar(login.usuario)">
+    <md-input-container flex>
+      <label>Email</label>
+      <md-icon>account_circle</md-icon>
+      <input name="email" ng-model="login.usuario.email" type="email" ng-minlength="6" maxlength="50" required>
+      <div ng-messages="login.formLogin['email'].$error">
+        <div ng-message="required">Campo Obrigatório</div>
+        <div ng-message="email">Email Inválido</div>
+        <div ng-message="minlength">O Email Deve Ter, Pelo Menos, 6 Caracteres</div>
+      </div>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Senha</label>
+      <md-icon>vpn_key</md-icon>
+      <input name="senha" ng-model="login.usuario.senha" type="password" ng-minlength="6" maxlength="14" required>
+      <div ng-messages="login.formLogin['senha'].$error">
+        <div ng-message="required">Campo Obrigatório</div>
+        <div ng-message="minlength">A Senha Deve Ter, Pelo Menos, 6 Caracteres</div>
+      </div>
+    </md-input-container>
+    <input type="submit" class="md-button md-primary md-raised" value="Entrar" ng-disabled="login.formLogin.$invalid">
+  </form>
+</div>

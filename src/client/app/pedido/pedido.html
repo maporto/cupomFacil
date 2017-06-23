@@ -1,0 +1,48 @@
+<div id="telaPedido">
+  <md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <md-button class="md-fab md-mini md-primary md-hue-3" aria-label="novo pedido">
+        <md-icon>refresh</md-icon>
+        <md-tooltip md-direction="right">NOVO PEDIDO</md-tooltip>
+      </md-button>
+      <span layout="row" layout-align="center" flex>Pedido</span>
+      <md-button class="md-fab md-mini md-primary md-hue-3" aria-label="imprimir">
+        <md-icon>print</md-icon>
+        <md-tooltip md-direction="left">IMPRIMIR</md-tooltip>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <form name="pedido.formPedido" layout="column" ng-submit="pedido.adicionarProduto()" flex="90" flex-offset="5">
+    <div layout="row" ng-repeat="(key,produto) in pedido.nota.itens">
+      <md-input-container flex="10">
+        <label>ITEM</label>
+        <md-icon>label_outline</md-icon>
+        <input type="number" ng-value="key" disabled>
+      </md-input-container>
+      <md-input-container flex="10">
+        <label>QTD</label>
+        <md-icon>label</md-icon>
+        <input type="number" ng-model="produto.quantidade" required>
+      </md-input-container>
+      <md-autocomplete flex md-search-text="produto.descricao" md-items="item in pedido.carregaProdutos(produto.descricao)" md-item-text="produto.descricao" md-floating-label="Descrição do Produto" required>
+        <md-item-template>
+          <span md-highlight-text="searchText">{{ item.descricao }}</span>
+        </md-item-template>
+        <md-not-found>
+          NENHUM ITEM COM ESSE NOME FOI ENCONTRADO.
+        </md-not-found>
+      </md-autocomplete>
+      <md-input-container flex="10">
+        <label>PREÇO</label>
+        <input type="number" ng-model="produto.preco" required>
+      </md-input-container>
+      <md-input-container flex="10">
+        <label>VALOR</label>
+        <input type="text" ng-value="produto.preco * produto.quantidade | currency:'R$'" disabled>
+      </md-input-container>
+    </div>
+    <md-input-container>
+      <md-button class="md-raised md-primary" type="submit" ng-disabled="pedido.formPedido['$invalid']">Adicionar Produto</md-button>
+    </md-input-container>
+  </form>
+</div>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/reporte/reporte.controller.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">app/reporte/reporte.controller.js</span></h1>
+    <h2>
+        Statements: <span class="metric">15.38% <small>(8 / 52)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">7.69% <small>(1 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">17.02% <small>(8 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/reporte/</a> &#187; reporte.controller.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+  'use strict';
+&nbsp;
+  angular
+    .module('app.reporte')
+    .controller('ReporteController', ReporteController);
+&nbsp;
+  /* @ngInject */
+<span class="fstat-no" title="function not covered" >  function ReporteController($state, $stateParams, $firebaseObject, $firebaseArray, Auth, firebase, logger) {</span>
+<span class="cstat-no" title="statement not covered" >    var _self = this;</span>
+<span class="cstat-no" title="statement not covered" >    _self.title = 'Reporte';</span>
+<span class="cstat-no" title="statement not covered" >    _self.visualizacao = $state.current.visualizacao;</span>
+<span class="cstat-no" title="statement not covered" >    _self.salvar = salvar;</span>
+<span class="cstat-no" title="statement not covered" >    _self.edicao = false;</span>
+<span class="cstat-no" title="statement not covered" >    _self.problema = [];</span>
+<span class="cstat-no" title="statement not covered" >    _self.permiteGerar = false;</span>
+<span class="cstat-no" title="statement not covered" >    _self.gerarOs = gerarOs;</span>
+<span class="cstat-no" title="statement not covered" >    init();</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function init() {</span>
+<span class="cstat-no" title="statement not covered" >      var refCategorias = firebase.database().ref().child('categorias');</span>
+<span class="cstat-no" title="statement not covered" >      $firebaseObject(refCategorias).$loaded().then(<span class="fstat-no" title="function not covered" >function(value) {<span class="cstat-no" title="statement not covered" ></span>_self.categoriaList = value;}</span>);</span>
+<span class="cstat-no" title="statement not covered" >      var refStatus = firebase.database().ref().child('status');</span>
+<span class="cstat-no" title="statement not covered" >      $firebaseObject(refStatus).$loaded().then(<span class="fstat-no" title="function not covered" >function(value) {<span class="cstat-no" title="statement not covered" ></span>_self.statusList = value;}</span>);</span>
+<span class="cstat-no" title="statement not covered" >      var refSetores = firebase.database().ref().child('setores');</span>
+<span class="cstat-no" title="statement not covered" >      $firebaseObject(refSetores).$loaded().then(<span class="fstat-no" title="function not covered" >function(value) {<span class="cstat-no" title="statement not covered" ></span>_self.setorList = value;}</span>);</span>
+<span class="cstat-no" title="statement not covered" >      if (_self.visualizacao) {</span>
+<span class="cstat-no" title="statement not covered" >        initDetalhes();</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        initNovo();</span>
+      }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function initDetalhes() {</span>
+<span class="cstat-no" title="statement not covered" >      var refReporte = firebase.database().ref('reporte').child($stateParams.id);</span>
+<span class="cstat-no" title="statement not covered" >      $firebaseObject(refReporte).$loaded().then(<span class="fstat-no" title="function not covered" >function(value) {</span></span>
+<span class="cstat-no" title="statement not covered" >        _self.problema = value;</span>
+      });
+<span class="cstat-no" title="statement not covered" >      if (Auth.$getAuth().email === 'marcos@marcos.com') {</span>
+<span class="cstat-no" title="statement not covered" >        _self.permiteGerar = true;</span>
+      }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function initNovo() {</span>
+<span class="cstat-no" title="statement not covered" >      var refUser = firebase.database().ref('usuarios').child(Auth.$getAuth().uid);</span>
+<span class="cstat-no" title="statement not covered" >      $firebaseObject(refUser).$loaded().then(<span class="fstat-no" title="function not covered" >function(value) {<span class="cstat-no" title="statement not covered" ></span>_self.problema.funcionario = value.nome;}</span>);</span>
+<span class="cstat-no" title="statement not covered" >      var refReporte = firebase.database().ref().child('reporte');</span>
+<span class="cstat-no" title="statement not covered" >      _self.reporte = $firebaseArray(refReporte);</span>
+<span class="cstat-no" title="statement not covered" >      _self.problema.data = new Date().toString();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function salvar() {</span>
+<span class="cstat-no" title="statement not covered" >      _self.reporte.$add(_self.problema);</span>
+<span class="cstat-no" title="statement not covered" >      logger.success('Reporte Criada com Sucesso');</span>
+<span class="cstat-no" title="statement not covered" >      $state.go('reporte.feed');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function gerarOs() {</span>
+<span class="cstat-no" title="statement not covered" >      var refUser = firebase.database().ref('usuarios').child(Auth.$getAuth().uid);</span>
+<span class="cstat-no" title="statement not covered" >      $firebaseObject(refUser).$loaded().then(<span class="fstat-no" title="function not covered" >function(value) {<span class="cstat-no" title="statement not covered" ></span>_self.problema.funcionario = value.nome;}</span>);</span>
+<span class="cstat-no" title="statement not covered" >      var refOs = firebase.database().ref().child('os');</span>
+<span class="cstat-no" title="statement not covered" >      _self.os = $firebaseArray(refOs);</span>
+<span class="cstat-no" title="statement not covered" >      _self.problema.status = 'Investigando';</span>
+<span class="cstat-no" title="statement not covered" >      _self.os.$add(_self.problema);</span>
+<span class="cstat-no" title="statement not covered" >      logger.success('Os Criada com Sucesso');</span>
+<span class="cstat-no" title="statement not covered" >      $state.go('os.feed');</span>
+    }
+  }
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 05 2017 03:48:58 GMT-0300 (BRT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
