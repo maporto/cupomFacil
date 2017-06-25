@@ -4,6 +4,7 @@
   angular.module('app', [
     'app.core',
     'app.pedido',
-    'app.login'
+    'app.login',
+    'ui.utils.masks'
   ]);
 })();
