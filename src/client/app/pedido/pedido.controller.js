@@ -26,12 +26,12 @@
       _self.nota.numero = new Date().getUTCMilliseconds();
       _self.nota.total = 0;
       adicionarProduto();
-    } 
+    }
 
     function adicionarProduto() {
       var produtoAtual = _self.nota.itens[_self.nota.itens.length - 1];
       if (_self.salvar) {
-        salvaProduto(produtoAtual); 
+        salvaProduto(produtoAtual);
       } else if (_self.alterar) {
         alteraProduto(produtoAtual);
       }
@@ -66,12 +66,12 @@
     }
 
     function isEmpty(obj) {
-        for(var prop in obj) {
-            if(obj.hasOwnProperty(prop))
-                return false;
+      for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+          return false;
         }
-
-        return true;
+      }
+      return true;
     }
 
     function salvaProduto(produto) {
@@ -84,8 +84,8 @@
     }
 
     function alteraProduto(produto) {
-      var produtoAtual = $firebaseArray(firebase.database().ref().child('produtos').orderByChild('descricao').equalTo(produto.descricao).limitToFirst(1)).$loaded().then(function (value){
-        if(!isEmpty(value)){
+      var produtoAtual = $firebaseArray(firebase.database().ref().child('produtos').orderByChild('descricao').equalTo(produto.descricao).limitToFirst(1)).$loaded().then(function (value) {
+        if (!isEmpty(value)) {
           value[0].preco = produto.preco;
         }
         value.$save(0);
