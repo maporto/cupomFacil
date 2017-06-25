@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/pedido/pedido.controller.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">app/pedido/pedido.controller.js</span></h1>
+    <h2>
+        Statements: <span class="metric">10.08% <small>(13 / 129)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">6.67% <small>(1 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">10.08% <small>(13 / 129)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/pedido/</a> &#187; pedido.controller.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function () {
+  'use strict';
+&nbsp;
+  angular
+    .module('app.pedido')
+    .controller('PedidoController', PedidoController);
+&nbsp;
+  /* @ngInject */
+<span class="fstat-no" title="function not covered" >  function PedidoController($state, $firebaseArray, $firebaseObject, firebase, $window, $filter, logger) {</span>
+<span class="cstat-no" title="statement not covered" >    var _self = this;</span>
+<span class="cstat-no" title="statement not covered" >    _self.title = 'Pedido';</span>
+<span class="cstat-no" title="statement not covered" >    _self.adicionarProduto = adicionarProduto;</span>
+<span class="cstat-no" title="statement not covered" >    _self.novoPedido = novoPedido;</span>
+<span class="cstat-no" title="statement not covered" >    _self.imprimir = imprimir;</span>
+<span class="cstat-no" title="statement not covered" >    _self.carregaProdutos = carregaProdutos;</span>
+<span class="cstat-no" title="statement not covered" >    _self.upperCase = upperCase;</span>
+<span class="cstat-no" title="statement not covered" >    _self.refProdutos = firebase.database().ref('produtos');</span>
+<span class="cstat-no" title="statement not covered" >    _self.firebaseProdutos = $firebaseArray(_self.refProdutos);</span>
+<span class="cstat-no" title="statement not covered" >    init();</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function init() {</span>
+<span class="cstat-no" title="statement not covered" >      _self.alterar = false;</span>
+<span class="cstat-no" title="statement not covered" >      _self.salvar = false;</span>
+<span class="cstat-no" title="statement not covered" >      _self.nota = [];</span>
+<span class="cstat-no" title="statement not covered" >      _self.nota.itens = [];</span>
+<span class="cstat-no" title="statement not covered" >      _self.nota.numero = new Date().getUTCMilliseconds();</span>
+<span class="cstat-no" title="statement not covered" >      _self.nota.total = 0;</span>
+<span class="cstat-no" title="statement not covered" >      adicionarProduto();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function adicionarProduto() {</span>
+<span class="cstat-no" title="statement not covered" >      var produtoAtual = _self.nota.itens[_self.nota.itens.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >      if (_self.salvar) {</span>
+<span class="cstat-no" title="statement not covered" >        salvaProduto(produtoAtual);</span>
+      } else <span class="cstat-no" title="statement not covered" >if (_self.alterar) {</span>
+<span class="cstat-no" title="statement not covered" >        alteraProduto(produtoAtual);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      _self.nota.itens.push({</span>
+        quantidade: 1,
+        descricao: '',
+        preco: null
+      });
+<span class="cstat-no" title="statement not covered" >      _self.alterar = false;</span>
+<span class="cstat-no" title="statement not covered" >      _self.salvar = true;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function novoPedido() {</span>
+<span class="cstat-no" title="statement not covered" >      init();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function carregaProdutos(descricao) {</span>
+<span class="cstat-no" title="statement not covered" >      var refProdutos = _self.refProdutos.orderByChild('descricao').startAt(descricao);</span>
+<span class="cstat-no" title="statement not covered" >      return $firebaseArray(refProdutos).$loaded();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getItens() {</span>
+<span class="cstat-no" title="statement not covered" >      var itens = [];</span>
+<span class="cstat-no" title="statement not covered" >      angular.forEach(_self.nota.itens, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (value.descricao !== '' &amp;&amp; value.quantidade !== '' &amp;&amp; value.preco !== '') {</span>
+<span class="cstat-no" title="statement not covered" >          value.total = value.preco * value.quantidade;</span>
+<span class="cstat-no" title="statement not covered" >          _self.nota.total = _self.nota.total + value.total;</span>
+<span class="cstat-no" title="statement not covered" >          itens.push(value);</span>
+        }
+      });
+<span class="cstat-no" title="statement not covered" >      return itens;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function isEmpty(obj) {</span>
+<span class="cstat-no" title="statement not covered" >      for (var prop in obj) {</span>
+<span class="cstat-no" title="statement not covered" >        if (obj.hasOwnProperty(prop)) {</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function salvaProduto(produto) {</span>
+<span class="cstat-no" title="statement not covered" >      var produtoFormatado = {</span>
+        descricao: produto.descricao,
+        preco: produto.preco
+      };
+<span class="cstat-no" title="statement not covered" >      _self.firebaseProdutos.$add(produtoFormatado);</span>
+<span class="cstat-no" title="statement not covered" >      logger.success('Produto Adicionado');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function alteraProduto(produto) {</span>
+<span class="cstat-no" title="statement not covered" >      var produtoAtual = $firebaseArray(_self.refProdutos.orderByChild('descricao')</span>
+        .equalTo(produto.descricao).limitToFirst(1)).$loaded().then(<span class="fstat-no" title="function not covered" >function (value) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isEmpty(value)) {</span>
+<span class="cstat-no" title="statement not covered" >          value[0].preco = produto.preco;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        value.$save(0);</span>
+      });
+<span class="cstat-no" title="statement not covered" >      logger.success('Produto Alterado');</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function imprimir() {</span>
+<span class="cstat-no" title="statement not covered" >      var dataAtual = new Date();</span>
+<span class="cstat-no" title="statement not covered" >      var impressao = $window.open();</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;html&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;head&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;title&gt;Nota' + _self.nota.numero + '&lt;/title&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;style&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('body{width:302px;font-family:courier;font-size:10px;font-weight: bold;}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#primeiro{ text-align:center;}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#segundo{}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#data{text-align:left;float:left;}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#numero{text-align:right;}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#terceiro{}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#quarto{}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('#rodape{}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('.iten{}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('.info{}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/style&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/head&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;body&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="primeiro"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;Nova Franquia&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;São Paulo - Santana&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;hr&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="segundo"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="data"&gt;' + $filter('date')(dataAtual, 'dd/MM/yyyy HH:mm') + '&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="numero"&gt;nº ' + _self.nota.numero + '&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;hr&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="terceiro"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="cabecalho"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;ITEM&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;QTD&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;DESCRIÇÃO&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;VL.UNIT&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;VL.ITEM&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      angular.forEach(getItens(), <span class="fstat-no" title="function not covered" >function (value, key) {</span></span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;div class="iten"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span&gt;' + (key + 1) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span&gt;' + value.quantidade + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span class="descricao"&gt;' + value.descricao + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span&gt;' + $filter('currency')(value.preco, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&amp;emsp;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span class="info"&gt;' + $filter('currency')(value.total, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;br&gt;');</span>
+      });
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;TOTAL ' + $filter('currency')(_self.nota.total, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;hr&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="rodape"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;OBRIGADO PELA PREFERÊNCIA&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/body&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/html&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.print();</span>
+<span class="cstat-no" title="statement not covered" >      impressao.close();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function upperCase(texto) {</span>
+<span class="cstat-no" title="statement not covered" >      return texto.toUpperCase();</span>
+    }
+&nbsp;
+  }
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 25 2017 06:55:38 GMT-0300 (BRT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

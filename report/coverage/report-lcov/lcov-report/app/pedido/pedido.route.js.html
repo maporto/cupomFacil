@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for app/login/login.route.js</title>
+    <title>Code coverage report for app/pedido/pedido.route.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../prettify.css">
     <link rel="stylesheet" href="../../base.css">
@@ -12,16 +12,16 @@
     </style>
 </head>
 <body>
-<div class="header high">
-    <h1>Code coverage report for <span class="entity">app/login/login.route.js</span></h1>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">app/pedido/pedido.route.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">71.43% <small>(5 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(3 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">33.33% <small>(1 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">71.43% <small>(5 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/login/</a> &#187; login.route.js</div>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/pedido/</a> &#187; pedido.route.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -51,8 +51,7 @@
 24
 25
 26
-27
-28</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+27</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -62,12 +61,11 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -83,25 +81,24 @@
   'use strict';
 &nbsp;
   angular
-    .module('app.login')
+    .module('app.pedido')
     .run(appRun);
 &nbsp;
   appRun.$inject = ['routerHelper'];
   /* @ngInject */
-  function appRun(routerHelper) {
-    routerHelper.configureStates(getStates());
+<span class="fstat-no" title="function not covered" >  function appRun(routerHelper) {</span>
+<span class="cstat-no" title="statement not covered" >    routerHelper.configureStates(getStates());</span>
   }
 &nbsp;
-  function getStates() {
-    return [{
-      state: 'login',
+<span class="fstat-no" title="function not covered" >  function getStates() {</span>
+<span class="cstat-no" title="statement not covered" >    return [{</span>
+      state: 'pedido',
       config: {
-        url: '/login',
-        templateUrl: 'app/login/login.html',
-        controller: 'LoginController',
-        controllerAs: 'login',
-        title: 'Login',
-        ehRotaRaiz: true,
+        url: '/pedido',
+        templateUrl: 'app/pedido/pedido.html',
+        controller: 'PedidoController',
+        controllerAs: 'pedido',
+        title: 'Pedido',
       }
     }];
   }

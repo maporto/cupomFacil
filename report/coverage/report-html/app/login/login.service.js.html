@@ -15,10 +15,10 @@
 <div class="header medium">
     <h1>Code coverage report for <span class="entity">app/login/login.service.js</span></h1>
     <h2>
-        Statements: <span class="metric">76.92% <small>(10 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">40% <small>(2 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">76.92% <small>(10 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">52.38% <small>(11 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">25% <small>(2 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">52.38% <small>(11 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/login/</a> &#187; login.service.js</div>
@@ -52,7 +52,25 @@
 25
 26
 27
-28</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -69,6 +87,11 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -78,8 +101,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function () {
   'use strict';
 &nbsp;
   angular
@@ -87,14 +123,19 @@
     .service('LoginService', LoginService);
 &nbsp;
   /* @ngInject */
-  function LoginService($firebaseAuth, $firebaseObject, $state) {
+  function LoginService($firebaseAuth, $firebaseObject, $state, logger) {
     var _self = this;
     _self.logar = logar;
     _self.checarLogado = checarLogado;
     _self.deslogar = deslogar;
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function logar(usuario, senha) {</span>
-<span class="cstat-no" title="statement not covered" >      return $firebaseAuth().$signInWithEmailAndPassword(usuario, senha);</span>
+<span class="fstat-no" title="function not covered" >    function logar(usuario, senha, route) {</span>
+<span class="cstat-no" title="statement not covered" >      return $firebaseAuth().$signInWithEmailAndPassword(usuario, senha)</span>
+        .then(<span class="fstat-no" title="function not covered" >function (result) {</span>
+<span class="cstat-no" title="statement not covered" >          $state.go(route);</span>
+        }).catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >          trataErrosLogin(error);</span>
+        });
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    function checarLogado() {</span>
@@ -104,6 +145,19 @@
 <span class="fstat-no" title="function not covered" >    function deslogar() {</span>
 <span class="cstat-no" title="statement not covered" >      $firebaseAuth().$signOut();</span>
     }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function trataErrosLogin(erro) {</span>
+<span class="cstat-no" title="statement not covered" >      switch (erro.code) {</span>
+        case 'auth/user-not-found':
+<span class="cstat-no" title="statement not covered" >          return logger.error('Conta não Encontrada');</span>
+        case 'auth/invalid-email':
+<span class="cstat-no" title="statement not covered" >          return logger.warning('Email Inválido');</span>
+        case 'auth/invalid-password':
+<span class="cstat-no" title="statement not covered" >          return logger.warning('Senha Inválido');</span>
+        case 'auth/wrong-password':
+<span class="cstat-no" title="statement not covered" >          return logger.warning('Email e/ou Senha Incorreta');</span>
+      }
+    }
   }
 })();
 &nbsp;</pre></td></tr>
@@ -111,7 +165,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 05 2017 03:48:58 GMT-0300 (BRT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 25 2017 06:55:38 GMT-0300 (BRT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

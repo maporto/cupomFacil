@@ -84,7 +84,8 @@
     }
 
     function alteraProduto(produto) {
-      var produtoAtual = $firebaseArray(firebase.database().ref().child('produtos').orderByChild('descricao').equalTo(produto.descricao).limitToFirst(1)).$loaded().then(function (value) {
+      var produtoAtual = $firebaseArray(_self.refProdutos.orderByChild('descricao')
+        .equalTo(produto.descricao).limitToFirst(1)).$loaded().then(function (value) {
         if (!isEmpty(value)) {
           value[0].preco = produto.preco;
         }
