@@ -25,6 +25,7 @@
       _self.nota.itens = [];
       _self.nota.numero = new Date().getUTCMilliseconds();
       _self.nota.total = 0;
+      _self.nota.desconto = 0;
       adicionarProduto();
     }
 
@@ -62,6 +63,7 @@
           itens.push(value);
         }
       });
+      _self.nota.tributo = _self.nota.total * 0.30;
       return itens;
     }
 
@@ -105,8 +107,10 @@
       impressao.document.write('#primeiro{ text-align:center;}');
       impressao.document.write('#segundo{}');
       impressao.document.write('#data{text-align:left;float:left;}');
+      impressao.document.write('#data{text-align:center;}');
       impressao.document.write('#numero{text-align:right;}');
-      impressao.document.write('#terceiro{}');
+      impressao.document.write('#terceiro{text-align:left;}');
+      impressao.document.write('#terceiro #total{text-align:right;}');
       impressao.document.write('#quarto{}');
       impressao.document.write('#rodape{}');
       impressao.document.write('.iten{}');
@@ -117,48 +121,86 @@
       impressao.document.write('<div id="primeiro">');
       impressao.document.write('<span>Nova Franquia</span>');
       impressao.document.write('<br>');
-      impressao.document.write('<span>São Paulo - Santana</span>');
-      impressao.document.write('</div>');
+      impressao.document.write('<span>COMÉRCIO DE MATERIAIS PARA CONSTRUÇÃO</span>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span>RUA VOLUNTARIS DA PATRIA 2041 LOJA 12</span>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span>SANTANA -SÃO PAULO - S.P.FONE: 2975-2355</span>');
+      impressao.document.write('<br>');
       impressao.document.write('<hr>');
       impressao.document.write('<div id="segundo">');
+      impressao.document.write('<div id="cupom">CUPOM NÃO FISCAL</div>');
       impressao.document.write('<div id="data">' + $filter('date')(dataAtual, 'dd/MM/yyyy HH:mm') + '</div>');
-      impressao.document.write('<div id="numero">nº ' + _self.nota.numero + '</div>');
+      impressao.document.write('<div id="numero">Pedido nº:' + _self.nota.numero + '</div>');
       impressao.document.write('</div>');
       impressao.document.write('<hr>');
       impressao.document.write('<div id="terceiro">');
       impressao.document.write('<div id="cabecalho">');
+      impressao.document.write('<div style="float:left;">');
       impressao.document.write('<span>ITEM</span>');
       impressao.document.write('&emsp;');
-      impressao.document.write('<span>QTD</span>');
-      impressao.document.write('&emsp;');
       impressao.document.write('<span>DESCRIÇÃO</span>');
+      impressao.document.write('</div>');
+      impressao.document.write('<div id="total">');
+      impressao.document.write('<span>QTD</span>');
       impressao.document.write('&emsp;');
       impressao.document.write('<span>VL.UNIT</span>');
       impressao.document.write('&emsp;');
       impressao.document.write('<span>VL.ITEM</span>');
-      impressao.document.write('&emsp;');
+      impressao.document.write('</div>');
       impressao.document.write('</div>');
       impressao.document.write('<br>');
       angular.forEach(getItens(), function (value, key) {
         impressao.document.write('<div class="iten">');
+        impressao.document.write('<div style="float:left;">');
         impressao.document.write('<span>' + (key + 1) + '</span>');
         impressao.document.write('&emsp;');
-        impressao.document.write('<span>' + value.quantidade + '</span>');
-        impressao.document.write('&emsp;');
         impressao.document.write('<span class="descricao">' + value.descricao + '</span>');
+        impressao.document.write('</div>');
+        impressao.document.write('<div id="total">');
+        impressao.document.write('<span>' + value.quantidade + '</span>');
         impressao.document.write('&emsp;');
         impressao.document.write('<span>' + $filter('currency')(value.preco, 'R$', 2) + '</span>');
         impressao.document.write('&emsp;');
         impressao.document.write('<span class="info">' + $filter('currency')(value.total, 'R$', 2) + '</span>');
         impressao.document.write('</div>');
+        impressao.document.write('</div>');
         impressao.document.write('<br>');
       });
-      impressao.document.write('<span>TOTAL ' + $filter('currency')(_self.nota.total, 'R$', 2) + '</span>');
+      impressao.document.write('<div id="total">');
+      impressao.document.write('<span>SUBTOTAL ' + $filter('currency')(_self.nota.total, 'R$', 2) + '</span>');
       impressao.document.write('<br>');
+      impressao.document.write('<span>DESCONTO ' + $filter('currency')(_self.nota.desconto, 'R$', 2) + '</span>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span>TOTAL ' +
+        $filter('currency')(_self.nota.total - _self.nota.desconto, 'R$', 2) + '</span>');
+      impressao.document.write('</div>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span>PDV 03.01.00</span>');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('&emsp;');
+      impressao.document.write('<span>' + dataAtual.getYear() + '' +
+        dataAtual.getDate() + ' ' + dataAtual.getFullYear() + ' ' + dataAtual.getTime() + '</span>');
       impressao.document.write('</div>');
       impressao.document.write('<hr>');
       impressao.document.write('<div id="rodape">');
+      impressao.document.write('<span> VALOR APROXIMADO DOS TRIBUTOS CASO A VENDA SEJA EFETUADA ');
+      impressao.document.write('(CONFORME A LEI FEDERAL 12.741/2012) (FONTE: IBPT)' +
+        $filter('currency')(_self.nota.tributo, 'R$', 2) + '</span>');
+      impressao.document.write('<hr>');
       impressao.document.write('<span>OBRIGADO PELA PREFERÊNCIA</span>');
+      impressao.document.write('<hr>');
+      impressao.document.write('<span>NUMERO TOTAL DE ITENS DESSE PEDIDO: ' + getItens().length + '</span>');
+      impressao.document.write('<hr>');
+      impressao.document.write('<span style="display:block;font-size:20px;">|||||||||||||||||||||||||</span>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span style="display:block;font-size:20px;">|||||||||||||||||||||||||</span>');
       impressao.document.write('</div>');
       impressao.document.write('</body>');
       impressao.document.write('</html>');

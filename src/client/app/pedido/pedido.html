@@ -38,8 +38,15 @@
         </md-input-container>
       </div>
     </div>
-    <md-input-container>
-      <md-button class="md-raised md-primary" type="submit" ng-disabled="pedido.formPedido['$invalid']">Adicionar Produto</md-button>
-    </md-input-container>
+    <div layout="row" flex>
+      <md-input-container>
+        <md-button class="md-raised md-primary" type="submit" ng-disabled="pedido.formPedido['$invalid']">Adicionar Produto</md-button>
+      </md-input-container>
+      <span flex></span>
+      <md-input-container>
+        <label>DESCONTO</label>
+        <input type="text" ng-model="pedido.nota.desconto" required ui-money-mask>
+      </md-input-container>
+    </div>
   </form>
 </div>
