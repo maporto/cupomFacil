@@ -13,25 +13,25 @@
     </div>
   </md-toolbar>
   <form name="pedido.formPedido" ng-submit="pedido.adicionarProduto()" flex="90" flex-offset="5">
-    <div layout="row" ng-repeat="(key,produto) in pedido.nota.itens" flex>
+    <div layout="row" ng-repeat="(key,item) in pedido.nota.itens" flex>
       <div layout="row" layout-xs="column" flex>
         <md-input-container flex-gt-xs="15" flex-sm="15" flex-gt-sm="10">
           <label>QTD</label>
           <md-icon>label</md-icon>
-          <input type="number" ng-model="produto.quantidade" required>
+          <input type="number" ng-model="item.quantidade" required>
         </md-input-container>
-        <md-autocomplete flex md-search-text="produto.descricao" md-items="item in pedido.carregaProdutos(produto.descricao)" md-item-text="produto.descricao" md-floating-label="Descrição do Produto" md-search-text-change="produto.descricao = pedido.upperCase(produto.descricao)" md-selected-item-change="produto.descricao = item.descricao; produto.preco = item.preco; pedido.salvar = false;" required>
+        <md-autocomplete flex md-selected-item-change="pedido.findProduto = produto; item.descricao = produto.descricao; item.preco = produto.preco; pedido.salvar = false;" md-item-text="item.descricao" md-search-text="item.descricao" md-search-text-change="item.descricao = pedido.upperCase(item.descricao);" md-items="produto in pedido.carregaProdutos(item.descricao)" md-floating-label="Descrição do Produto">
           <md-item-template>
-            <span md-highlight-text="produto.descricao">{{ item.descricao }}</span>
+            <span md-highlight-text="item.descricao">{{ produto.descricao }}</span>
           </md-item-template>
         </md-autocomplete>
         <md-input-container flex-gt-xs="15" flex-sm="15" flex-gt-sm="10">
           <label>PREÇO</label>
-          <input type="text" ng-model="produto.preco" required ui-money-mask>
+          <input type="text" ng-model="item.preco" ng-change="pedido.findProduto.preco = item.preco;" required ui-money-mask>
         </md-input-container>
         <md-input-container flex-gt-xs="15" flex-sm="15" flex-gt-sm="10">
           <label>VALOR</label>
-          <input type="text" ng-value="produto.preco * produto.quantidade | currency:'R$'" disabled>
+          <input type="text" ng-value="item.preco * item.quantidade | currency:'R$'" disabled>
         </md-input-container>
         <md-input-container flex="5">
           <md-checkbox ng-model="pedido.alterar" ng-if="pedido.nota.itens.length -1 === key"></md-checkbox>
@@ -44,8 +44,17 @@
       </md-input-container>
       <span flex></span>
       <md-input-container>
+        <label>SUBTOTAL</label>
+        <input type="text" ng-model="pedido.nota.subtotal" ui-money-mask disabled>
+      </md-input-container>
+      <md-input-container>
         <label>DESCONTO</label>
         <input type="text" ng-model="pedido.nota.desconto" required ui-money-mask>
+      </md-input-container>
+      <md-input-container>
+        <label>TOTAL</label>
+        <md-icon>attach_money</md-icon>
+        <input type="text" ng-model="pedido.nota.total" ng-value="pedido.nota.subtotal - pedido.nota.desconto" disabled ui-money-mask>
       </md-input-container>
     </div>
   </form>
