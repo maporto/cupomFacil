@@ -8,3 +8,5 @@ bower_components/
 report/plato
 /build
 /report
+build/
+report/
