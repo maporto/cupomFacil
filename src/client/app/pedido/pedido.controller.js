@@ -83,6 +83,7 @@
       angular.forEach(_self.nota.itens, function (value) {
         if (value.descricao !== '' && value.quantidade !== '' && value.preco !== '') {
           value.total = value.preco * value.quantidade;
+          value.totalItens = value.totalItens + value.quantidade;
           _self.nota.total = _self.nota.total + value.total;
           itens.push(value);
         }
@@ -124,7 +125,7 @@
       impressao.document.write('<head>');
       impressao.document.write('<title>Nota' + _self.nota.numero + '</title>');
       impressao.document.write('<style>');
-      impressao.document.write('body{width:302px;font-family:arial;font-size:10px;font-weight: bold;}');
+      impressao.document.write('body{width:302px;font-family:arial;font-size:11px;font-weight: bold;}');
       impressao.document.write('#primeiro{ text-align:center;}');
       impressao.document.write('#segundo{}');
       impressao.document.write('#data{text-align:left;float:left;}');
@@ -181,20 +182,20 @@
         impressao.document.write('<div id="total">');
         impressao.document.write('<span>' + value.quantidade + '</span>');
         impressao.document.write('&emsp;');
-        impressao.document.write('<span>' + $filter('currency')(value.preco, 'R$', 2) + '</span>');
+        impressao.document.write('<span>' + $filter('currency')(value.preco, '', 2) + '</span>');
         impressao.document.write('&emsp;');
-        impressao.document.write('<span class="info">' + $filter('currency')(value.total, 'R$', 2) + '</span>');
+        impressao.document.write('<span class="info">' + $filter('currency')(value.total, '', 2) + '</span>');
         impressao.document.write('</div>');
         impressao.document.write('</div>');
         impressao.document.write('<br>');
       });
       impressao.document.write('<div id="total">');
-      impressao.document.write('<span>SUBTOTAL ' + $filter('currency')(_self.nota.total, 'R$', 2) + '</span>');
+      impressao.document.write('<span>SUBTOTAL ' + $filter('currency')(_self.nota.total, '', 2) + '</span>');
       impressao.document.write('<br>');
-      impressao.document.write('<span>DESCONTO ' + $filter('currency')(_self.nota.desconto, 'R$', 2) + '</span>');
+      impressao.document.write('<span>DESCONTO ' + $filter('currency')(_self.nota.desconto, '', 2) + '</span>');
       impressao.document.write('<br>');
       impressao.document.write('<span>TOTAL ' +
-        $filter('currency')(_self.nota.total - _self.nota.desconto, 'R$', 2) + '</span>');
+        $filter('currency')(_self.nota.total - _self.nota.desconto, '', 2) + '</span>');
       impressao.document.write('</div>');
       impressao.document.write('<br>');
       impressao.document.write('<span>PDV 03.01.00</span>');
@@ -213,11 +214,11 @@
       impressao.document.write('<div id="rodape">');
       impressao.document.write('<span> VALOR APROXIMADO DOS TRIBUTOS CASO A VENDA SEJA EFETUADA ');
       impressao.document.write('(CONFORME A LEI FEDERAL 12.741/2012) (FONTE: IBPT)' +
-        $filter('currency')(_self.nota.tributo, 'R$', 2) + '</span>');
+        $filter('currency')(_self.nota.tributo, '', 2) + '</span>');
       impressao.document.write('<hr>');
       impressao.document.write('<span>OBRIGADO PELA PREFERÊNCIA</span>');
       impressao.document.write('<hr>');
-      impressao.document.write('<span>NUMERO TOTAL DE ITENS DESSE PEDIDO: ' + getItens().length + '</span>');
+      impressao.document.write('<span>NUMERO TOTAL DE ITENS NO PEDIDO: ' + getItens().totalItens + '</span>');
       impressao.document.write('<hr>');
       impressao.document.write('<span style="display:block;font-size:20px;">||||||||||||||||||' +
         '|||||||||||||||||||||||||||||||||</span>');
