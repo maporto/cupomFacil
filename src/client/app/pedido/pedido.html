@@ -20,7 +20,7 @@
           <md-icon>label</md-icon>
           <input type="number" ng-model="item.quantidade" required>
         </md-input-container>
-        <md-autocomplete flex md-selected-item-change="pedido.findProduto = produto; item.descricao = produto.descricao; item.preco = produto.preco; pedido.salvar = false;" md-item-text="item.descricao" md-search-text="item.descricao" md-search-text-change="item.descricao = pedido.upperCase(item.descricao);" md-items="produto in pedido.carregaProdutos(item.descricao)" md-floating-label="Descrição do Produto">
+        <md-autocomplete flex required md-selected-item-change="pedido.findProduto = produto; item.descricao = produto.descricao; item.preco = produto.preco; pedido.salvar = false;" md-item-text="item.descricao" md-search-text="item.descricao" md-search-text-change="item.descricao = pedido.upperCase(item.descricao);" md-items="produto in pedido.carregaProdutos(item.descricao)" md-floating-label="Descrição do Produto">
           <md-item-template>
             <span md-highlight-text="item.descricao">{{ produto.descricao }}</span>
           </md-item-template>

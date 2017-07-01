@@ -49,12 +49,12 @@
     }
 
     function addWatch(item) {
-      $scope.$watch(angular.bind(this, function () {
+      $scope.$watch(angular.bind(_self, function () {
         return item.quantidade;
       }), function (value) {
         verificaTotal();
       });
-      $scope.$watch(angular.bind(this, function () {
+      $scope.$watch(angular.bind(_self, function () {
         return item.preco;
       }), function (value) {
         verificaTotal();
