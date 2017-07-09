@@ -42,13 +42,14 @@
 
   /* @ngInject */
   function initializeFirebase(firebase) {
+    // Initialize Firebase
     var config = {
-      apiKey: 'AIzaSyC0wcDoU93aj8r3z37vk53CIkIcB4fcRsQ',
-      authDomain: 'cupomfacil-e60a5.firebaseapp.com',
-      databaseURL: 'https://cupomfacil-e60a5.firebaseio.com',
-      projectId: 'cupomfacil-e60a5',
-      storageBucket: 'cupomfacil-e60a5.appspot.com',
-      messagingSenderId: '1003208524965'
+      apiKey: 'AIzaSyDObA1il3vu4ryejlSoXpG8StdnSWg3pXA',
+      authDomain: 'cupomfacilteste.firebaseapp.com',
+      databaseURL: 'https://cupomfacilteste.firebaseio.com',
+      projectId: 'cupomfacilteste',
+      storageBucket: '',
+      messagingSenderId: '101512374868'
     };
     firebase.initializeApp(config);
   }

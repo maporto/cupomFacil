@@ -22,6 +22,16 @@
         title: 'Login',
         ehRotaRaiz: true,
       }
+    }, {
+      state: 'criar-conta',
+      config: {
+        url: '/criar-conta',
+        templateUrl: 'app/login/criar-conta.html',
+        controller: 'CriarContaController',
+        controllerAs: 'criarConta',
+        title: 'Criar Conta',
+        ehRotaRaiz: true,
+      }
     }];
   }
 })();

@@ -1,0 +1,36 @@
+<div id="telaLogin" layout="row" layout-align="center center">
+  <form name="criarConta.formNovaConta" layout="column" flex-sm flex-md="60" flex-gt-sm="20" ng-submit="criarConta.criarConta()">
+    <div layout="row" layout-align="center">
+      <h1>Nova Conta</h1>
+    </div>
+    <md-input-container flex>
+      <label>Empresa</label>
+      <md-icon>account_balance</md-icon>
+      <input name="empresa" ng-model="criarConta.user.empresa" ng-minlength="3" maxlength="14" required>
+      <div ng-messages="criarConta.formNovaConta['empresa'].$error">
+        <div ng-message="required">Campo Obrigatório</div>
+        <div ng-message="minlength">O Nome da Empresa Deve Ter, Pelo Menos, 3 Caracteres</div>
+      </div>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Email</label>
+      <md-icon>email</md-icon>
+      <input name="usuario" ng-model="criarConta.user.usuario" type="email" ng-minlength="6" maxlength="50" required>
+      <div ng-messages="criarConta.formNovaConta['usuario'].$error">
+        <div ng-message="required">Campo Obrigatório</div>
+        <div ng-message="email">Email Inválido</div>
+        <div ng-message="minlength">O Email Deve Ter, Pelo Menos, 6 Caracteres</div>
+      </div>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Senha</label>
+      <md-icon>vpn_key</md-icon>
+      <input name="senha" ng-model="criarConta.senha" type="password" ng-minlength="6" maxlength="14" required>
+      <div ng-messages="criarConta.formNovaConta['senha'].$error">
+        <div ng-message="required">Campo Obrigatório</div>
+        <div ng-message="minlength">A Senha Deve Ter, Pelo Menos, 6 Caracteres</div>
+      </div>
+    </md-input-container>
+    <input type="submit" class="md-button md-primary md-raised" value="Cadastrar" ng-disabled="criarConta.formNovaConta.$invalid">
+  </form>
+</div>

@@ -6,7 +6,7 @@
     .controller('PedidoController', PedidoController);
 
   /* @ngInject */
-  function PedidoController($state, $firebaseArray, $firebaseObject, firebase, $window, $filter, logger, $scope) {
+  function PedidoController($state, $firebaseArray, $firebaseObject, firebase, $window, $filter, logger, $scope, Auth) {
     var _self = this;
     _self.title = 'Pedido';
     _self.adicionarProduto = adicionarProduto;
@@ -15,7 +15,8 @@
     _self.carregaProdutos = carregaProdutos;
     _self.upperCase = upperCase;
     _self.addWatch = addWatch;
-    _self.refProdutos = firebase.database().ref('produtos');
+    _self.defaultRef = firebase.database().ref('empresas/' + Auth.$getAuth().uid);
+    _self.refProdutos = _self.defaultRef.child('/produtos');
     _self.firebaseProdutos = $firebaseArray(_self.refProdutos);
     init();
 
