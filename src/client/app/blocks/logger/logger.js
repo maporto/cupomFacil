@@ -26,7 +26,7 @@
     function error(message, data) {
       $mdToast.show({
         hideDelay : 3000,
-        position : 'top right',
+        position : 'top left',
         controller : 'ToastrController',
         controllerAs: 'toastr',
         templateUrl : 'app/blocks/logger/toast.html',
@@ -41,7 +41,7 @@
     function info(message, data) {
       $mdToast.show({
         hideDelay : 3000,
-        position : 'top right',
+        position : 'top left',
         controller : 'ToastrController',
         controllerAs: 'toastr',
         templateUrl : 'app/blocks/logger/toast.html',
@@ -56,7 +56,7 @@
     function success(message, data) {
       $mdToast.show({
         hideDelay : 3000,
-        position : 'top right',
+        position : 'top left',
         controller : 'ToastrController',
         controllerAs: 'toastr',
         templateUrl : 'app/blocks/logger/toast.html',
@@ -71,7 +71,7 @@
     function warning(message, data) {
       $mdToast.show({
         hideDelay : 3000,
-        position : 'top right',
+        position : 'top left',
         controller : 'ToastrController',
         controllerAs: 'toastr',
         templateUrl : 'app/blocks/logger/toast.html',

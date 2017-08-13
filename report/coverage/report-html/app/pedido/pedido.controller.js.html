@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">app/pedido/pedido.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">8.15% <small>(15 / 184)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">7.77% <small>(15 / 193)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">0% <small>(0 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">4.76% <small>(1 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">8.15% <small>(15 / 184)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">7.77% <small>(15 / 193)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/pedido/</a> &#187; pedido.controller.js</div>
@@ -264,7 +264,16 @@
 237
 238
 239
-240</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -351,24 +360,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -379,6 +372,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -454,6 +465,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -585,11 +603,13 @@
 <span class="fstat-no" title="function not covered" >    function getItens() {</span>
 <span class="cstat-no" title="statement not covered" >      _self.nota.total = 0;</span>
 <span class="cstat-no" title="statement not covered" >      var itens = [];</span>
+<span class="cstat-no" title="statement not covered" >      itens.totalItens = 0;</span>
 <span class="cstat-no" title="statement not covered" >      angular.forEach(_self.nota.itens, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
 <span class="cstat-no" title="statement not covered" >        if (value.descricao !== '' &amp;&amp; value.quantidade !== '' &amp;&amp; value.preco !== '') {</span>
 <span class="cstat-no" title="statement not covered" >          value.total = value.preco * value.quantidade;</span>
 <span class="cstat-no" title="statement not covered" >          _self.nota.total = _self.nota.total + value.total;</span>
 <span class="cstat-no" title="statement not covered" >          itens.push(value);</span>
+<span class="cstat-no" title="statement not covered" >          itens.totalItens = itens.totalItens + value.quantidade;</span>
         }
       });
 <span class="cstat-no" title="statement not covered" >      _self.nota.tributo = _self.nota.total * 0.30;</span>
@@ -629,7 +649,7 @@
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;head&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;title&gt;Nota' + _self.nota.numero + '&lt;/title&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;style&gt;');</span>
-<span class="cstat-no" title="statement not covered" >      impressao.document.write('body{width:302px;font-family:arial;font-size:10px;font-weight: bold;}');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('body{width:302px;font-family:arial;font-size:11px;font-weight: bold;}');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('#primeiro{ text-align:center;}');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('#segundo{}');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('#data{text-align:left;float:left;}');</span>
@@ -686,20 +706,27 @@
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;div id="total"&gt;');</span>
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span&gt;' + value.quantidade + '&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&amp;emsp;');</span>
-<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span&gt;' + $filter('currency')(value.preco, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span&gt;' + $filter('currency')(value.preco, '', 2) + '&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&amp;emsp;');</span>
-<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span class="info"&gt;' + $filter('currency')(value.total, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;span class="info"&gt;' + $filter('currency')(value.total, '', 2) + '&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;/div&gt;');</span>
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;/div&gt;');</span>
 <span class="cstat-no" title="statement not covered" >        impressao.document.write('&lt;br&gt;');</span>
       });
-<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="total"&gt;');</span>
-<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;SUBTOTAL ' + $filter('currency')(_self.nota.total, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="baixo" style="text-align:right;"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div style="float:left;"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;SUBTOTAL&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
-<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;DESCONTO ' + $filter('currency')(_self.nota.desconto, 'R$', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;DESCONTO&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
-<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;TOTAL ' +</span>
-        $filter('currency')(_self.nota.total - _self.nota.desconto, 'R$', 2) + '&lt;/span&gt;');
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;TOTAL&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;' + $filter('currency')(_self.nota.total, '', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;' + $filter('currency')(_self.nota.desconto, '', 2) + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;' +</span>
+        $filter('currency')(_self.nota.total - _self.nota.desconto, '', 2) + '&lt;/span&gt;');
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;/div&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;br&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;PDV 03.01.00&lt;/span&gt;');</span>
@@ -718,11 +745,11 @@
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;div id="rodape"&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt; VALOR APROXIMADO DOS TRIBUTOS CASO A VENDA SEJA EFETUADA ');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('(CONFORME A LEI FEDERAL 12.741/2012) (FONTE: IBPT)' +</span>
-        $filter('currency')(_self.nota.tributo, 'R$', 2) + '&lt;/span&gt;');
+        $filter('currency')(_self.nota.tributo, '', 2) + '&lt;/span&gt;');
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;hr&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;OBRIGADO PELA PREFERÊNCIA&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;hr&gt;');</span>
-<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;NUMERO TOTAL DE ITENS DESSE PEDIDO: ' + getItens().length + '&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span&gt;NUMERO TOTAL DE ITENS NO PEDIDO: ' + getItens().totalItens + '&lt;/span&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;hr&gt;');</span>
 <span class="cstat-no" title="statement not covered" >      impressao.document.write('&lt;span style="display:block;font-size:20px;"&gt;||||||||||||||||||' +</span>
         '|||||||||||||||||||||||||||||||||&lt;/span&gt;');
@@ -747,7 +774,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 30 2017 04:35:39 GMT-0300 (BRT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jul 09 2017 14:56:00 GMT-0300 (BRT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

@@ -80,12 +80,13 @@
     function getItens() {
       _self.nota.total = 0;
       var itens = [];
+      itens.totalItens = 0;
       angular.forEach(_self.nota.itens, function (value) {
         if (value.descricao !== '' && value.quantidade !== '' && value.preco !== '') {
           value.total = value.preco * value.quantidade;
-          value.totalItens = value.totalItens + value.quantidade;
           _self.nota.total = _self.nota.total + value.total;
           itens.push(value);
+          itens.totalItens = itens.totalItens + value.quantidade;
         }
       });
       _self.nota.tributo = _self.nota.total * 0.30;
@@ -189,12 +190,19 @@
         impressao.document.write('</div>');
         impressao.document.write('<br>');
       });
-      impressao.document.write('<div id="total">');
-      impressao.document.write('<span>SUBTOTAL ' + $filter('currency')(_self.nota.total, '', 2) + '</span>');
+      impressao.document.write('<div id="baixo" style="text-align:right;">');
+      impressao.document.write('<div style="float:left;">');
+      impressao.document.write('<span>SUBTOTAL</span>');
       impressao.document.write('<br>');
-      impressao.document.write('<span>DESCONTO ' + $filter('currency')(_self.nota.desconto, '', 2) + '</span>');
+      impressao.document.write('<span>DESCONTO</span>');
       impressao.document.write('<br>');
-      impressao.document.write('<span>TOTAL ' +
+      impressao.document.write('<span>TOTAL</span>');
+      impressao.document.write('</div>');
+      impressao.document.write('<span>' + $filter('currency')(_self.nota.total, '', 2) + '</span>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span>' + $filter('currency')(_self.nota.desconto, '', 2) + '</span>');
+      impressao.document.write('<br>');
+      impressao.document.write('<span>' +
         $filter('currency')(_self.nota.total - _self.nota.desconto, '', 2) + '</span>');
       impressao.document.write('</div>');
       impressao.document.write('<br>');
