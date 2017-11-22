@@ -4,8 +4,8 @@
   var core = angular.module('app.core');
 
   var config = {
-    appErrorPrefix: '[genos Error] ',
-    appTitle: 'genos'
+    appErrorPrefix: '[novocupom Error] ',
+    appTitle: 'Novo Cupom'
   };
 
   core.value('config', config);
@@ -41,16 +41,8 @@
   ]);
 
   /* @ngInject */
-  function initializeFirebase(firebase) {
-    var config = {
-      apiKey: 'AIzaSyC0wcDoU93aj8r3z37vk53CIkIcB4fcRsQ',
-      authDomain: 'cupomfacil-e60a5.firebaseapp.com',
-      databaseURL: 'https://cupomfacil-e60a5.firebaseio.com',
-      projectId: 'cupomfacil-e60a5',
-      storageBucket: 'cupomfacil-e60a5.appspot.com',
-      messagingSenderId: '1003208524965'
-    };
-    firebase.initializeApp(config);
+  function initializeFirebase(firebase, FIRE_CONFIG) {
+    firebase.initializeApp(FIRE_CONFIG);
   }
 
   configureTheme.$inject = ['$mdThemingProvider'];

@@ -6,7 +6,7 @@
     .service('LoginService', LoginService);
 
   /* @ngInject */
-  function LoginService($firebaseAuth, $firebaseObject, $state, logger) {
+  function LoginService($firebaseAuth, $firebaseObject, $state, logger, $rootScope) {
     var _self = this;
     _self.logar = logar;
     _self.checarLogado = checarLogado;
@@ -26,6 +26,7 @@
     }
 
     function deslogar() {
+      delete $rootScope.user;
       $firebaseAuth().$signOut();
     }
 
@@ -41,5 +42,9 @@
           return logger.warning('Email e/ou Senha Incorreta');
       }
     }
+
+    $firebaseAuth().$onAuthStateChanged(function (firebaseUser) {
+      $rootScope.user = firebaseUser;
+    });
   }
 })();

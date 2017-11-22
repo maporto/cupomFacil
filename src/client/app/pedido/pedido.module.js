@@ -3,6 +3,7 @@
 
   angular
     .module('app.pedido', [
+      'app.cupom',
       'ngMaterial',
       'ngMessages',
       'firebase',

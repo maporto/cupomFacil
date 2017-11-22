@@ -1,17 +1,4 @@
 <div id="telaPedido">
-  <md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
-      <md-button class="md-fab md-mini md-primary md-hue-3" ng-click="pedido.novoPedido()" aria-label="novo pedido">
-        <md-icon>refresh</md-icon>
-        <md-tooltip md-direction="right">NOVO PEDIDO</md-tooltip>
-      </md-button>
-      <span layout="row" layout-align="center" flex>Pedido {{pedido.nota.numero}}</span>
-      <md-button class="md-fab md-mini md-primary md-hue-3" ng-click="pedido.imprimir()" aria-label="imprimir">
-        <md-icon>print</md-icon>
-        <md-tooltip md-direction="left">IMPRIMIR</md-tooltip>
-      </md-button>
-    </div>
-  </md-toolbar>
   <form name="pedido.formPedido" ng-submit="pedido.adicionarProduto()" flex="90" flex-offset="5">
     <div layout="row" ng-repeat="(key,item) in pedido.nota.itens" flex>
       <div layout="row" layout-xs="column" flex>
@@ -59,3 +46,11 @@
     </div>
   </form>
 </div>
+<md-button class="md-fab md-mini md-primary md-hue-3" ng-click="pedido.novoPedido()" aria-label="novo pedido">
+  <md-icon>refresh</md-icon>
+  <md-tooltip md-direction="right">NOVO PEDIDO</md-tooltip>
+</md-button>
+<md-button class="md-fab md-mini md-primary md-hue-3" ng-click="pedido.imprimir()" aria-label="imprimir">
+  <md-icon>print</md-icon>
+  <md-tooltip md-direction="left">IMPRIMIR</md-tooltip>
+</md-button>

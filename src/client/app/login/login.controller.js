@@ -13,7 +13,7 @@
     _self.logar = logar;
 
     function logar(usuario) {
-      LoginService.logar(usuario.email, usuario.senha, 'pedido');
+      LoginService.logar(usuario.email, usuario.senha, 'home');
     }
   }
 })();
